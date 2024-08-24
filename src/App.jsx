@@ -7,7 +7,7 @@ import satData from './components/satData';
 
 function App() {
   const [sat, setSat] = useState(satData);
-  const displaySats = [...new Set(satData.map((data) => data.orbitType))]; 
+  const orbitTypes = [...new Set(satData.map((data) => data.orbitType))]; 
   /*  
     spread operator converts the new Set object into an array
     new Set() creates a new Set object, which removes duplicates from its collection
@@ -28,7 +28,7 @@ function App() {
       <Buttons 
         filterByType={filterByType}
         setSat={setSat}
-        displaySats={displaySats}
+        orbitTypes={orbitTypes}
       />
       <Table sat={sat}/>
     </div>
